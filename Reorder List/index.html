@@ -1,12 +1,21 @@
 <html lang="en">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<title>Re-Order List</title>
 		<style type="text/css">
 			*{
 				margin: 0;
 				padding: 0;
 				font-family: Helvetica;
+			}
+			.clearfix:after{
+				content: '.';
+				height: 0;
+				line-height: 0;
+				clear: both;
+				display: block;
+				visibility: hidden;
 			}
 			dl:after{
 				content: '.';
@@ -19,6 +28,7 @@
 			#center{
 				width:450px;
 				margin: 0 auto;
+				position: relative;
 			}
 			a{
 				color: #3450A8;
@@ -29,7 +39,8 @@
 				height: 42px;
 				line-height: 42px;
 				padding: 0 8px;
-				position: relative;
+				position: fixed;
+				width: 435px;
 			}
 			#head_bar h2{
 				font-size: 16px;
@@ -75,13 +86,20 @@
 			/*----------------------------------
 				List fomatting
 			-----------------------------------*/
+			#list{
+				padding-top: 42px;
+			}
 			#list.list dd a{
 				font-weight: bold;
 				font-size: 13px;
 			}
 			#list dl{
 				background:-webkit-gradient(linear, left top, left bottom, from(#F2F2F2), to(#EEEEEE));
+				background:-moz-linear-gradient(top,#F2F2F2,#EEEEEE);
+				background:-o-linear-gradient(top,#F2F2F2,#EEEEEE);
 				padding: 15px 10px;
+				padding-right: 0;
+				border-bottom: 1px solid #999;
 			}
 			#list.list dt .prod-pic{
 				float: left;
@@ -120,12 +138,108 @@
 			}
 			#list.list dd .pricing{
 				float: right;
+				width: 80px;
+				background: #FBFBFB;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-right: none;
 			}
-			
+			aside h1{
+				color: #444;
+				font-size: 10px;
+				margin-bottom: 10px;
+			}
+			aside h1 strong{
+				font-weight: bold;
+				color: #222;
+				font-size: 18px;
+				display: block;
+			}
+			aside h1 strong sup{
+				font-size: x-small;
+				color: #222;
+			}
+
+			h1.current_bids strong{
+				font-size: 14px;
+			}
+			/*----------------------------------
+				Grid View
+			-----------------------------------*/
+			#center.grid{
+				width: 597;
+			}
+			.grid #head_bar{
+				width: 581px;
+			}
+			.grid #list dl{
+				width: 128px;
+				float: left;
+				padding: 10px;
+				border: 1px solid #999;
+				border-top: none;
+			}
+			.grid #list dl:nth-child(4n+4){
+				border-left: none;
+			}
+			.grid #list dl:nth-child(4n+1){
+				border-right: none;
+			}
+			.grid #list dl:nth-child(4n+2){
+				border-right: none;
+			}
+			.grid #list.list dt .prod-pic{
+				max-width: 125px;
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
+			.grid #list.list dd .details{
+				width: auto;
+			}
+			.grid #list.list dd a {
+			    font-size: 13px;
+			    font-weight: bold;
+			}
+			.grid #list.list dd .pricing {
+				width: 90%;
+				text-align: center;
+				border: none;
+				margin-top: 10px;
+				background: transparent;
+				padding: 5px;
+			}
+			.grid #list.list dd .details .rating{
+				font-size: 10px;
+				height: 15px;
+			}
+				/*----------------------------------
+					Transitions
+				-----------------------------------*/
+			#center{
+				-moz-transition: all .4s ease-out;
+			}
+			#head_bar{
+				-moz-transition: all .4s ease-out;
+			}
+			#list dl{
+				-moz-transition: all .4s ease-out;
+			}
+			#list dl:nth-child(4n+4){
+				-moz-transition: all .4s ease-out;
+			}
+			#list dl:nth-child(4n+1){
+				-moz-transition: all .4s ease-out;
+			}
+			#list dl:nth-child(4n+2){
+				-moz-transition: all .4s ease-out;
+			}
+			#list.list dt .prod-pic{
+				-moz-transition: all .4s ease-out;
+			}
 		</style>
 	</head>
 	<body>
-		<div id="center">
+		<div id="center" class="clearfix">
 			<header id="head_bar">
 				<h2>1749 <span>results found</span></h2>
 				<a href="#" class="headtoggle list current">List</a>
@@ -138,8 +252,8 @@
 				</form>
 			</header>
 			<article id="list" class="list">
-			<dl><!-- data item -->
-			  <dt>	
+			<dl>
+			  <dt><!-- data item -->	
 			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
 			  </dt>
 				<dd>
@@ -152,12 +266,236 @@
 						</h4>
 					</aside>
 					<aside class="pricing">
-						<h1 class="price">$428.00<span>Buy It Now</span></h1>
-						<h4 class="current_bids">$29.99<span>0 bids (1d 1h 25m)</span></h4>
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
 					</aside>
 				</dd><!--// data item -->
 			</dl> 
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+			<dl>
+			  <dt><!-- data item -->	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price"><strong><sup>$</sup>428.00</strong> Buy It Now</h1>
+						<h1 class="current_bids"><strong>$29.99</strong>0 bids<br /> (1d 1h 25m)</h1>
+					</aside>
+				</dd><!--// data item -->
+			</dl>
+
 			</article>
 		</div>
 	</body>
+	<script type="text/javascript">
+		(function(){
+			$('.list').on('click', function(){
+				$('#center').removeClass('grid');		
+				$('.grid').removeClass('current');
+				$(this).addClass('current');	
+			});
+			$('.grid').on('click', function(){
+				$('#center').addClass('grid');
+				$(this).addClass('current');
+				$('.list').removeClass('current');		
+			});
+		})();
+	</script>
 </html>
