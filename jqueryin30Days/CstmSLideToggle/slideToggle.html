@@ -1,0 +1,47 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<title>SlideToggle</title>
+		<style type="text/css">
+			#box{
+				background: gray;
+				color: #fff;
+				font:14pt helvetica;
+				padding: 15px;
+				width: 280px;
+			}
+			h1{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h3>This is My Container</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+		<button>SlideToggle</button>
+		<script type="text/javascript">
+		(function(){
+			var box = $('div#box');
+			
+			$.fn.fadeSlideToggle = function(speed, call_back){
+		
+				return $(this).animate({//always want to return your jQuery object
+					height : 'toggle',//you can toggle animate methods
+					opacity: 'toggle'
+				}, speed || 800, function(){
+					$.isFunction(call_back) && call_back.call(this);
+				});//use speed, if blank use .8 seconds
+			}
+			$('button').on('click' , function(){
+				box.fadeSlideToggle(500,function(){
+					console.log('finished');
+				});
+			});
+		})();	
+		</script>
+	</body>
+</html>

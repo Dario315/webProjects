@@ -1,0 +1,75 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>scrollTop</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<style type="text/css">
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var speed = 100;
+				$('.arrow , .nuke').click(function(){
+					
+					if($('#i-header').hasClass('open')){
+						$('#i-header').stop().animate({'top' : 0}, speed);
+						$('#i-header').removeClass('open');
+						$('#i-header').addClass('collapsed');
+						$('#hidden_div').animate({'height' : 40}, speed);
+					}else{
+						$('#i-header').stop().animate({'top' : 50}, speed);
+						$('#i-header').removeClass('collapsed');
+						$('#i-header').addClass('open');
+						$('#hidden_div').animate({'height' : 100}, speed);
+					}
+				});
+				
+				$('.arrow, .nuke').hover(function(){
+					//hover
+					$('.arrow').css('backgroundPosition' , '50% 90%' );
+					$('.nuke').css('backgroundColor' , '#00ccff');
+				},function(){
+					//hover off
+					$('.arrow').css('backgroundPosition' , '50% 10%' );
+					$('.nuke').css('backgroundColor' , 'transparent');
+				});
+				//scrolling
+				$(window).scroll(function(){
+					if($('body').scrollTop() >=20){
+						$('#i-header').stop().animate({'top' : 0}, speed);
+						$('#i-header').removeClass('open');
+						$('#i-header').addClass('collapsed');
+						$('#hidden_div').stop().animate({'height' : 40}, speed);
+					}else{
+						$('#i-header').stop().animate({'top' : 50}, speed);
+						$('#i-header').removeClass('collapsed');
+						$('#i-header').addClass('open');
+						$('#hidden_div').stop().animate({'height' : 100}, speed);
+					}
+					console.log($('body').scrollTop())
+				});
+			});
+		</script>
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="nuke_header">
+				<a href="#" class="nuke"><span></span></a>
+				<a href="#" class="login">Login</a>
+			</div>
+			<div id="i-header" class="open">
+				<a href='#' class="arrow"><span></span></a>
+			</div>
+		</div>
+		<div id="hidden_div"></div>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+		<footer>Sticky header | Copyright 2012 | Brady Sammons</footer>
+	</div>
+	</body>
+</html>

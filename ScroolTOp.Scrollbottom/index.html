@@ -1,0 +1,103 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<title>Index Test</title>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+				font-family: Helvetica;
+				width: 400px;
+				margin:  0 auto;
+			}
+			ul, li{
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			ul{
+
+			}
+			li a{
+				padding: 0px 10px;
+				background: -moz-linear-gradient(top, #E3EEF9, #D0DFEF);
+				background: -webkit-gradient(linear, 0 0, 0 100%,from(#E3EEF9), to(#D0DFEF));
+				height: 100px;
+				line-height: 100px;
+				color: #888;
+				display: block;
+				width: 400px;
+				margin-bottom: 1px;
+				text-decoration: none;
+			}
+			li a:hover, li a.current{
+				background: #D0DFEF;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="">List Item 1</a></li>
+			<li><a href="">List Item 2</a></li>			
+			<li><a href="">List Item 3</a></li>
+			<li><a href="">List Item 4</a></li>
+			<li><a href="">List Item 5</a></li>
+			<li><a href="">List Item 6</a></li>
+			<li><a href="">List Item 7</a></li>
+			<li><a href="">List Item 8</a></li>
+			<li><a href="">List Item 9</a></li>
+			<li><a href="">List Item 10</a></li>
+			<li><a href="">List Item 11</a></li>
+			<li><a href="">List Item 12</a></li>
+			<li><a href="">List Item 13</a></li>
+			<li><a href="">List Item 14</a></li>
+
+		</ul>
+	</body>
+	<script type="text/javascript">
+		(function(){
+			var winHeight = $(window).height(),
+				eleHeight = $('li a').outerHeight(),
+				activeIndex = null,
+				stackHeight = null;
+				
+				$(window).scroll(function(){
+									
+					if(activeIndex != null){
+						var topper = $(window).scrollTop(),
+							eleOffst = $('li a.current').offset().top;
+
+						if(winHeight + topper < eleOffst){
+							console.log('off the Bottom')
+						}else if(topper > (eleOffst + eleHeight)){
+							console.log('off the top')
+						}else{
+						console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+						console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+						console.log("active index: " + activeIndex);
+						console.log("element height: " + eleHeight);
+						console.log("scroll top: " + topper);
+						console.log("window height: " + winHeight);
+						console.log("element offset: " + eleOffset);
+						console.log("stack height: " + stackHeight);
+						console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+						console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					}
+				}
+			});
+			
+			$('li a').on('click',function(e){
+				var $this = $(this);
+				activeIndex = $this.parent('li').index();
+				$('.current').removeClass('current');
+				$this.addClass('current');
+				stackHeight = (activeIndex +1) * eleHeight;
+				e.preventDefault();
+			});
+			$(window).resize(function(){
+		windowHeight = $(window).height(); 
+	 });
+		})();
+	</script>
+</html>

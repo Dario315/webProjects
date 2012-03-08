@@ -1,0 +1,163 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Re-Order List</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: Helvetica;
+			}
+			dl:after{
+				content: '.';
+				height: 0;
+				line-height: 0;
+				clear: both;
+				display: block;
+				visibility: hidden;
+			}
+			#center{
+				width:450px;
+				margin: 0 auto;
+			}
+			a{
+				color: #3450A8;
+				text-decoration: none;
+			}
+			header#head_bar{
+				background: #E0E0E0;
+				height: 42px;
+				line-height: 42px;
+				padding: 0 8px;
+				position: relative;
+			}
+			#head_bar h2{
+				font-size: 16px;
+				display: inline;
+				color: #414141;
+			}
+			#head_bar h2 span{
+				font-size: 77%;
+			}
+			#head_bar .headtoggle{
+				display: block;
+				width: 22px;
+				position: absolute;
+				bottom: 20px;
+				height: 30px;
+				text-indent: -9999px;
+				margin-bottom: -20px;
+				left: 200px;
+			}
+			#head_bar .headtoggle.list{
+				background: url(img/gridSprite.png) no-repeat;
+				background-position: 0px 0;
+			}
+			#head_bar .headtoggle.list:hover, 
+			#head_bar .headtoggle.list.current{
+				background-position: -44px 0;	
+			}
+			#head_bar .headtoggle.grid{
+				background: url(img/gridSprite.png) no-repeat;
+				background-position: -22px 0;
+				left: 225px;
+			}
+			#head_bar .headtoggle.grid:hover, 
+			#head_bar .headtoggle.grid.current{
+				background-position: -66px 0;	
+			}
+			#head_bar form{
+				float: right;
+			}
+			#head_bar form label{
+				
+			}
+			/*----------------------------------
+				List fomatting
+			-----------------------------------*/
+			#list.list dd a{
+				font-weight: bold;
+				font-size: 13px;
+			}
+			#list dl{
+				background:-webkit-gradient(linear, left top, left bottom, from(#F2F2F2), to(#EEEEEE));
+				padding: 15px 10px;
+			}
+			#list.list dt .prod-pic{
+				float: left;
+				border: 1px solid #ccc;
+				margin-right: 20px;
+				max-width: 140px;
+				height: auto;
+			}
+			#list.list dd{
+				margin-top: 15px;
+			}
+			#list.list dd .details{
+				float: left;
+				width: 175px;
+			}
+			#list.list dd .details h5{
+				margin-top: 5px;
+				color: #A9A9A9;
+				font-size: 70%;
+			}
+			#list.list dd .details strong{
+				font-size: 12px;
+				display: block;
+				line-height: 2;
+				color: #525252;
+			}
+			#list.list dd .details .rating{
+				color: #4D4D4D;
+				font-size: 70%;
+				background: url(img/badgeSm.png) no-repeat;
+				padding-left: 13px;
+				background-size: 10px;
+			}
+			#list.list dd .details .rating .seller{
+				font-weight: normal;
+			}
+			#list.list dd .pricing{
+				float: right;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="center">
+			<header id="head_bar">
+				<h2>1749 <span>results found</span></h2>
+				<a href="#" class="headtoggle list current">List</a>
+				<a href="#" class="headtoggle grid">Grid</a>
+				<form>
+					<h2><span>Sort by:</span></h2>
+					<select>
+						<option> Best Match</option>
+					</select>
+				</form>
+			</header>
+			<article id="list" class="list">
+			<dl><!-- data item -->
+			  <dt>	
+			  	<img class="prod-pic" src="img/purse.png" alt="purse" width="170" height="169" />		  
+			  </dt>
+				<dd>
+					<aside class="details">
+						<a href="">Coach new Kristin patent leather round satchel</a>
+						<h5>The Classic Coach Round Satchel</h5>
+						<strong>Refurbished</strong>
+						<h4 class="rating">
+							99.8%<span class="seller">iSellTHingz</span>(666,243)
+						</h4>
+					</aside>
+					<aside class="pricing">
+						<h1 class="price">$428.00<span>Buy It Now</span></h1>
+						<h4 class="current_bids">$29.99<span>0 bids (1d 1h 25m)</span></h4>
+					</aside>
+				</dd><!--// data item -->
+			</dl> 
+			</article>
+		</div>
+	</body>
+</html>

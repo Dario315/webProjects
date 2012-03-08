@@ -1,0 +1,53 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<title>Appending Content</title>
+		<style type="text/css">
+			blockquote{
+				background: #ccc;
+				width: 30%;
+				padding: 5px;
+				float: right;
+				color: #fff;
+				font-size: 1.4em;
+				text-align: center;
+			}
+			article{
+				width: 600px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			<h1>My First Post</h1>
+			<p><span class="co">Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+		</article>
+		<script type="text/javascript">
+			//$('article').prepend('Hello from java script');
+			//$('article').apend('Hello from java script');
+			//$('h1').after('Hello from java script');
+			//$('p').first().before('Hello from java script');
+			//$('<h2>Hello Form JS</h2>').appendTo('article');
+			(function(){
+				//$('<h2>Hello From JS<h2>' , {//we pass an object and define options
+				//	text:'Hello From JS',
+				//	class:'myClass',
+				//	id:'heading'
+				//}).insertBefore('p:first');
+				// $('h1').appendTo('article'); //appendTO can move existing elements
+				var co = $('article').find('span.co').each(function(){
+					var $this = $(this);
+					$('<blockquote></blockquote>' ,{
+						text: $this.text(),
+						class: 'co'
+					}).prependTo($this.closest('p'))	
+				});
+			})();
+		</script>
+	</body>
+</html>

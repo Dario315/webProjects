@@ -1,0 +1,17 @@
+body{
+	background: #E1ECFF;
+	font-family: Helvetica;
+}
+#wrapper{
+	margin: 0 auto;
+	width: 800px;
+	background: #eee;
+	padding: 10px;
+}
+
+h1{
+	color: #A59AFC;
+}
+p{
+	color: #999;
+}

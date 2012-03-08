@@ -1,0 +1,42 @@
+body{
+	font-family: Helvetica, arial, sans-serif;
+}
+ul { 
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+#sticky-list  {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+#sticky-list > ul {
+  height: 100%;
+  overflow: auto;
+}
+
+#sticky-list > ul > li strong, #sticky-list > ul > li:first-child strong {
+  font-size: 1.5em;
+  color: #222;
+  background: #ccc;
+  display: block;
+  padding: 0.5em 10px;
+  color: #999;
+  text-shadow: 0px 1px 0px rgba(255,255,255,.8);
+	background: #F2F2F2;
+}
+#sticky-list > ul > li.sticky strong {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  background: #D1E0F4;
+  text-shadow: 0px 1px 0px rgba(0,0,0,.8);
+}
+
+#sticky-list > ul ul li {
+  padding: 1em 10px;
+  border-bottom: 1px solid #ccc;
+}
+

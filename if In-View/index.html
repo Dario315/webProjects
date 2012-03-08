@@ -1,0 +1,85 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="viewport.js"></script>
+		<title>Test</title>
+		<style type="text/css">
+			#wrapper{
+				width: 700px;
+				margin: 0 auto;
+			}
+			#nav{
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0,0,0,.7);
+				padding: 10px;
+			}
+			ul,li{
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			ul,li a{
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				font-weight: bold;
+				font-family: Helvetica;
+			}
+			ul li a:hover, ul li a:hover{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="nav">
+				<ul>
+					<li><a href="#postOne">Post One</a></li>
+					<li><a href="#postTwo">Post Two</a></li>
+					<li><a href="#postThree">Post Three</a></li>
+					<li><a href="#postFour">Post Four</a></li>
+					<li><a href="#postFive">Post Five</a></li>
+					<li><a href="#postSix">Post Six</a></li>
+					<li><a href="#postSeven">Post Seven</a></li>
+				</ul>
+			</div>
+			<article id="postOne">
+				<h1>Post One</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article id="postTwo">
+				<h1>Post Two</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article id="postThree">
+				<h1>Post Three</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article id="postFour">
+				<h1>Post Four</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article id="postFive">
+				<h1>Post Five</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article id="postSix">
+				<h1>Post Six</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+		</div>
+	<script type="text/javascript">
+		$(window).scroll(function(){
+			//console.log($('#postFour h1:in-viewport').length);
+			if($('#postFour h1:in-viewport').length == 1){
+				console.log('in view')
+			}else{
+				console.log('Out view')
+			}
+		});
+	</script>
+	</body>
+</html>

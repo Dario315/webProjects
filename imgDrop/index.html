@@ -1,0 +1,52 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Image hover Overlay</title>
+		<style type="text/css">
+		body{
+			margin-top: 200px;
+		}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				
+			}
+			li{
+				position: relative;
+				width: 200px;
+				height:150px;
+				cursor: pointer;
+				overflow: hidden;
+				float: left;
+				margin-right: 20px;
+			}
+			li p, li img{
+				position: absolute;
+			}
+			li p{
+				background: url(img/trans.png) repeat;
+				padding: 8px;
+				color: #fff;
+				font-family: Helvetica;
+				margin: 0;
+				top:0;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="js/imgDrop.js"></script>
+		</head>
+	<body>
+		<ul class="img-list">
+			<li>
+			<img src="img/Boston-City-FlowTh.jpg" width="400" height="350" />
+			<p>This is the description for the image you hovered on!! , j kj  jh jh jh jh jkhh h kjg jkygkj gjkhb jhg jkyg kjygkyguykgukyg oiuy</p>
+			</li>
+			<li>
+			<img src="img/Boston-City-FlowTh.jpg" width="200" height="150" />
+			<p>This is the description for the image you hovered on!! , j kj  jh jh jh jh jkhh h kjg jkygkj gjkhb jhg jkyg kjygkyguykgukyg oiuy</p>
+			</li>
+		</ul>
+	
+	</body>
+</html>

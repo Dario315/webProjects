@@ -1,0 +1,51 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#slider-wrap{
+	width: 500px;
+	margin: 0 auto;
+	position: relative;
+}
+.slider{
+	width: 500px;
+	height: 300px;
+	overflow: scroll;
+}
+.slider ul{
+	width: 10000px;
+}
+.slider li{
+	float: left;
+}
+#slider-nav{
+	display: none;
+	margin-top: 1em;
+	position: absolute;
+	background: red;
+	width: inherit;
+	top: 40%;
+}
+#slider-nav button{
+	background: #ccc;
+	color: #444;
+	font-weight: bold;
+	padding: 5px;
+	cursor: pointer;
+	border: none;
+	position: absolute;
+	box-shadow: 0 1px 1px rgba(0,0,0,.8)
+}
+#slider-nav button:last-child{
+	left: -2px;
+	border-radius: 0 10px 10px 0;
+}
+#slider-nav button:first-child{
+	right: -2px;
+	border-radius:10px 0  0 10px;
+}

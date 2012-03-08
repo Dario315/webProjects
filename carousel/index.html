@@ -1,0 +1,87 @@
+<html lang="en">
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="style.css">
+		<title>Carousel</title>
+	</head>
+	<body>
+		<div class="inf_carousel">
+			<div class="container">
+				<ul>
+					<li>
+						<a href="">
+							<img src="img/imgres-1.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-2.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-3.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-4.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-5.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-6.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>		
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-7.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/imgres-8.jpeg" alt="imgres-1" width="100" height="100" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a class="navbtn prev" href="">Prev</a>
+			<a class="navbtn next" href="">Next</a>
+		</div>
+		<script type="text/javascript">
+	
+		(function(){
+			$.fn.infiniCarousel = function(){
+				return this.each(function(){
+				
+				var $wrapper = $('> div' , this).css('overflow' , 'hidden'),
+					$slider = $wrapper.find('>ul'),
+					$items = $slider.find('>li a'),
+					$single = $items.filter(':first');
+					
+					$singleWidth = $single.outerWidth(),
+					$visible = Math.ceil(($wrapper.innerWidth() -110)/$singleWidth),
+					$currPage = 1,
+					$pages = Math.ceil($items.length / $visible);
+					
+					console.log('single' , $single);
+					console.log('singleWidth' , $singleWidth);
+					console.log('visible' , $visible);
+					console.log('pages' , $pages);
+					console.log('inner' , $wrapper.innerWidth());
+					
+				});
+				
+			};
+		})(jQuery);
+		$('div.inf_carousel').infiniCarousel();
+		</script>
+
+	</body>
+</html>

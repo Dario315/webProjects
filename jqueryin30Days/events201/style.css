@@ -1,0 +1,32 @@
+body{
+	margin: 10px auto 0 auto;
+	font-family: Helvetica, arial, sans-serif;
+	width: 500px;
+	text-align: center;
+}
+dl{
+
+}
+dt{
+	background: #eee;
+	padding: 12px 0;
+	border-bottom: 1px solid #c5c5c5;
+	border-top: 1px solid #fff;
+	font-weight: bold;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+dd{
+	margin: 0;
+	padding: 1em 0;
+	color: #555;
+}
+
+dt:first-child{
+	border-top: none;
+}
+dt:nth-last-child(2){
+	border: none;
+}
+

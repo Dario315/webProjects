@@ -1,0 +1,21 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<title>$this Keyword</title>
+	</head>
+	<body>
+		<a href="http://bradysammons.com">Click Me!</a>
+		<script type="text/javascript">
+			
+			
+			
+			
+			function doSomething(e){
+				e.preventDefault()
+				console.log(this);
+			}
+			$('a').on('click', doSomething);
+		</script>
+	</body>
+</html>

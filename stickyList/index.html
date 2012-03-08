@@ -1,0 +1,62 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script src="jquery.stickysectionheaders.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var stickyWidth = $('#sticky-list ul li').width() - 20;
+				console.log(stickyWidth)
+				$('#sticky-list').stickySectionHeaders();
+				//set first link to active
+				$('#sticky-list ul li:first strong')
+					.css('width' , stickyWidth)
+					.css('background' , '#D1E0F4')
+					.css('color' , '#fff')
+					.css('text-shadow' , '0px 1px 0px rgba(0,0,0,.8)');
+			});
+		</script>
+	</head>
+	<body>
+		<div id="sticky-list">
+		  <ul>
+		    <li>
+		      <strong>Section Headline 1</strong>
+		      <ul>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		      </ul>
+		    </li>
+		    <li>
+		      <strong>Section Headline 2</strong>
+		      <ul>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		      </ul>
+		    </li>
+		    <li>
+		      <strong>Section Headline 4</strong>
+		      <ul>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		      </ul>
+		    </li>
+		    <li>
+		      <strong>Section Headline 5</strong>
+		      <ul>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		        <li>Content line</li>
+		      </ul>
+		    </li>
+		  </ul>          
+		</div>
+	</body>
+</html>

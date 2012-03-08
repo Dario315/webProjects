@@ -1,0 +1,60 @@
+.inf_carousel{
+			position: relative;
+			width: 611px;
+		
+		}
+		.inf_carousel .container{
+			width: 535px;
+			margin: 0 40px;
+			position: absolute;
+			overflow: auto;
+			min-height: 11em;
+			top: 0;
+		}
+		.inf_carousel .container ul{
+			position: absolute;
+			top: 0;
+			width: 1190px;
+			padding: 10px;
+			min-width: 500px;
+		}
+		ul, li{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li{
+			background: red;
+		}
+		li a{
+			float: left;
+			background: #000;
+			padding: 5px;
+			border-radius: 5px;
+			margin-right: 25px;
+			margin-bottom: 20px;
+			-webkit-transition: all .5s ease;
+		}
+		li a:hover {
+			background: #0095F2;
+		}
+		.navbtn{
+			position: absolute;
+			top: 50px;
+			display: block;
+			width: 30px;
+			height: 30px;
+			background: url(img/navSprite.png) no-repeat;
+			background-position: center bottom;
+			text-indent: -9999px;
+		}
+		.navbtn.next:hover{
+			background-position: center 0px;
+		}
+		.navbtn.prev:hover{
+			background-position: center -30px;
+		}
+		.navbtn.next{
+			right: 0;
+			background-position: center -60px;
+		}

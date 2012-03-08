@@ -1,0 +1,32 @@
+#container{
+	width:1200px;
+	margin: 30px auto;
+}
+ul,li{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+#nav{
+	position: relative;
+}
+#blob{
+	position: absolute;
+	z-index: 1;
+	top: 20px;
+	height: 2px;
+}
+#nav li{
+	float: left;
+	
+}
+#nav li a{
+	color: #555;
+	position: relative;
+	z-index: 2;
+	text-decoration: none;
+}
+
+#nav li a:hover{
+	text-decoration: underline
+}

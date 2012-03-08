@@ -1,0 +1,92 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			body {
+			    height:1500px;
+			    padding-top:100px;
+			}
+			
+			.active {
+			    background-color:yellow;
+			}
+			
+			#main-nav {
+			    position:fixed;
+			    top:0px;
+			    background-color:#FFF;
+			    padding:20px;
+			}
+			
+			p {
+			    color:#CCC;
+			}
+			
+			a.section {
+			    font-weight:bold;
+			    font-size:25px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+			    var sections = {},
+			        _height  = $(window).height(),
+			        i        = 0;
+			    
+			    // Grab positions of our sections 
+			    $('.section').each(function(){
+			        sections[this.name] = $(this).offset().top;
+			    });
+			
+			    $(document).scroll(function(){
+			        var $this = $(this),
+			            pos   = $this.scrollTop();
+			            
+			        for(i in sections){
+			            if(sections[i] > pos && sections[i] < pos + _height){
+			                $('a').removeClass('active');
+			                $('#nav_' + i).addClass('active');
+			            }  
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body>
+	<div id="nav">
+    <div id="main-nav" class="center">
+        <ul>
+            <li><a id="nav_section1" href="#section1" class="active">Section 1</a></li>
+            <li><a id="nav_section2" href="#section2">Section 2</a></li>
+            <li><a id="nav_section3" href="#section3">Section 3</a></li>
+        </ul>
+    </div>
+    <br />
+    <a name="section1" class="section">SECTION 1</a>
+    <p>Section 1 section 1 Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1</p>
+    <p>Section 1 section 1 Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1</p>
+    <p>Section 1 section 1 Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1</p>
+    
+        <p>Section 1 section 1 Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1Section 1 section 1</p>
+    <br /><br />
+
+ 
+   <a name="section2" class="section">SECTION 2 </a>
+    <p>Section 2  section 2  Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 </p>
+    <p>Section 2  section 2  Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 </p>
+    <p>Section 2  section 2  Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 </p>
+    
+        <p>Section 2  section 2  Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 Section 2  section 2 </p>
+    <br /><br />
+    
+    <a name="section3" class="section">SECTION 3 </a>
+    <p>Section 3  section 3  Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 </p>
+    <p>Section 3  section 3  Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 </p>
+    <p>Section 3  section 3  Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 </p>
+    
+        <p>Section 3  section 3  Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 Section 3  section 3 </p>
+</div>
+	</body>
+</html>

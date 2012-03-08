@@ -1,0 +1,34 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>tooltips</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(window).resize(function(){
+				if($(window).height()<300){
+					$('a.super_tool_bottom').removeClass('super_tool_bottom');
+					$('a').addClass('super_tool_top');
+					
+				}else{
+					$('a.super_tool_top').removeClass('super_tool_top');
+					$('a').addClass('super_tool_bottom');
+				}
+			});
+			
+		});
+	</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+<a href="" class="super_tool_top"><span><strong>- 99%</strong> problem-free transactions<br /> 
+<strong>- 95%</strong> of buyers satisfied with delivery time <br />
+<strong>- 2 days</strong> average response time to questions</span>Hover Me!</a> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+<a href="" class="super_tool_bottom"><span>Cool Stuff ya hoo!</span>Hover me too</a> into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+</p>
+		</div>
+	</body>
+</html>

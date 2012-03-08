@@ -1,0 +1,157 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
+	<script src="js/jquery.serialScroll-1.2.2-min.js"></script>
+	
+		<title>Content Slider</title>
+		<style type="text/css">
+			#wrapper{
+				width: 750px;
+				margin: 0 auto;
+			}
+			#navigation{
+				background: rgba(255,0,0,.5);
+				float: left;
+				position: absolute;
+				z-index: 100;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			li a{
+				display: block;
+				text-decoration: none;
+				height: 59px;
+				text-align: center;
+				width: 140px;
+				line-height: 60px;
+				font-family: Helvetica;
+				position: relative;
+				border-bottom: 1px solid #333;
+				border-top: 1px solid #fff;
+				background: #999;
+				color: #333;
+				font-weight: bold;
+				text-shadow: 0 1px 0 rgba(255,255,255,.6);
+			}
+			li a:hover, .current{
+				background: #97C0EE;
+				color: #fff;
+				text-shadow: 0 1px 0 rgba(0,0,0,.6);
+			}
+			li a:hover span,li a.current span  {
+				visibility: visible;
+				
+			}
+			li span{
+				width: 0;
+				height: 0;
+				border-top: 29px solid transparent;
+				border-bottom: 29px solid transparent;
+				border-left: 20px solid #97C0EE;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 140px;
+				z-index: 100;
+				visibility: hidden;
+			}
+			#content{
+				width: 620px;
+				height: 305px;
+				overflow-y: scroll;
+				position: relative;
+				z-index: 1;
+				margin-left: 140px;
+				background: #777;
+				-webkit-box-shadow: inset -3px -5px 10px rgba(0,0,0,.3);
+			}
+			.cell{
+				padding-top: 30px;
+				color: #ccc;
+				font-family: Helvetica;
+				width: 565px;
+				height: 275px;
+				padding: 10px;
+				padding-left: 30px;
+				margin-bottom: 30px;
+			}
+			p{
+				line-height: 1.5;
+			}
+			h1{
+				color: #1A4C83;
+				font-family: "Bauhaus 93";
+				font-size: 60px;
+				text-shadow: 0 1px 0 rgba(255,255,255,.4);
+				margin: 0;
+				padding: 0;
+				line-height: .8;
+			}
+			#next, #prev{
+				position: absolute;
+				left: 420px;
+				display: block;
+				cursor: pointer;
+			}
+			#next{
+				top: 0px;				
+			}
+			#prev{
+				bottom: 0px;
+			}
+			#footer{
+				clear: both;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="navigation">
+				<ul>
+					<li><a class="current" href="#cell-1">Link 1<span></span></a></li>
+					<li><a href="#cell-2">Link 2<span></span></a></li>
+					<li><a href="#cell-3">Link 3<span></span></a></li>
+					<li><a href="#cell-4">Link 4<span></span></a></li>
+					<li><a href="#cell-5">Link 5<span></span></a></li>
+				</ul>
+				<img id="next"/ src="dn.png">
+				<img id="prev"/ src="up.png">
+				
+			</div>
+			<div id="content"><!-- scroller -->
+			<div class="scroll-container">
+				<div id="cell-1" class="cell">
+					<h1>Title 1</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div id="cell-2" class="cell">
+					<h1>Title 2</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div id="cell-3" class="cell">
+					<h1>Title 3</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div id="cell-4" class="cell">
+					<h1>Title 4</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				<div id="cell-5" class="cell">
+					<h1>Title 5</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+			</div>
+			</div>
+			<div id="footer">Content Slider | By: Brady Sammons | Copyright 2012 <a href="">bradysammons.com</a></div>
+		</div><!-- //wrapper -->
+	</body>
+</html>
