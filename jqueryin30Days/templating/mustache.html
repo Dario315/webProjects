@@ -1,0 +1,45 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js"></script>
+		<title>Handlebars</title>
+	</head>
+	<body>
+		<ul class="tweets">
+			<script id="template" type="text/x-handlebars-template">
+  				{{#each this}}
+  				<li>
+  					<img src="{{thumb}}" alt="{{title}}"/>
+  					<h2>{{author}}{{#if age}}<span> - {{age}}</span>{{/if}}</h2>
+  					<p>{{tweet}}</p>
+  				</li>
+  				{{/each}}
+			</script>
+		</ul>
+	
+		
+	<script type="text/javascript">
+		(function(){
+			var data = [
+			{
+				author: 'Brady Sammons',
+				thumb : 'https://en.gravatar.com/userimage/8982744/d08e8b1f0a1c52f247658948196c73b6.jpg',
+				tweet: 'Learning jQuery templating is cool man!',
+				age : '200'
+			},
+			{
+				author: 'Brady Sammons',
+				thumb : 'https://en.gravatar.com/userimage/8982744/d08e8b1f0a1c52f247658948196c73b6.jpg',
+				tweet: 'Learning jQuery templating is cool man!'
+			}
+			
+			];
+			var template = Handlebars.compile($('#template').html() );
+			
+			var temp = template(data);
+			$('ul.tweets').append(template(data))
+		})();
+	</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<title>Templating with jQuery</title>
+	<script id='blogTemplate' type='myTemplate'>
+		<h2>{{title}}</h2>
+		<img src="{{thumbnail}}" alt="{{title}}"/>
+	</script>
+	</head>
+	<body>
+	<script type="text/javascript">
+		(function(){
+			var content = [
+				{
+					title : "My Awesome Post",
+					thumbnail: 'http://d2f8dzk2mhcqts.cloudfront.net/0837_Caricatures/p.jpg',
+				},
+				{
+					title : "My Second Awesome Post",
+					thumbnail: 'http://d2f8dzk2mhcqts.cloudfront.net/0856_Twitter_App/preview.jpg',
+				},
+				{
+					title : "My Third Awesome Post",
+					thumbnail: 'http://d2f8dzk2mhcqts.cloudfront.net/0837_Caricatures/p.jpg',
+				},
+
+			],
+			template = $.trim($('#blogTemplate').html());
+			var frag = '';
+			$.each(content, function(index, obj){
+				frag += 
+					template.replace( /{{title}}/ig, obj.title )
+							.replace( /{{thumbnail}}/ig, obj.thumbnail );
+			});
+			$(document.body).append(frag);
+			
+		})();
+	</script>
+	</body>
+</html>
