@@ -127,8 +127,9 @@ body{
 	margin-right: 3px;
 }
 a{
-	color: #216fe0;
+	color: #3565A8;
 	text-decoration: none;
+	font-size: 12px;
 }
 a:hover{
 	text-decoration: underline;
@@ -142,23 +143,28 @@ strong{
 li .tout_wrap{
 	padding: 0px;
 	margin-bottom: 10px;
-
+	overflow: hidden;
 }
 .tout_content{
 	background: #C4C4C4;
 }
-/*-------TOUT HEADER-------*/
+.tout_header,
+.tout_footer,
+.tout_wrap .social_re{
+	padding: 0 10px;
+}
 .tout_header{
 	height: 32px;
 	width: 265px;
-	padding: 0 10px;
 	line-height: 32px;
 	background: #DCDCDC;
 	position: relative;
 	.box-shadow(0 4px 3px -3px rgba(0,0,0,.4));
 }
-.tout_header a{
-	font-size: 12px;
+.tout_footer{
+	background: #DCDCDC;
+	.box-shadow(~"0 -2px 3px -1px rgba(0,0,0,.4), 0 2px 3px -1px rgba(0,0,0,.4)");
+	padding:10px;
 }
 .timestamp{
 	float: left;
@@ -171,9 +177,9 @@ li .tout_wrap{
 	position: absolute;
 	left: 50%;
 	top: 0px;
-	margin-left: -30px;
-	width: 60px;
-	height: 60px;
+	margin-left: -27px;
+	width: 54px;
+	height: 54px;
 	text-indent: -9999px;
 	display: block;
 	.rounded(40px);
@@ -181,7 +187,6 @@ li .tout_wrap{
 }
 .play_it span{
 	background: url(../../img/play.png) no-repeat -1 -1;
-	
 	.rounded(40px);
 	display: block; 
 	height: 42px;
@@ -192,7 +197,27 @@ li .tout_wrap{
 	top: 50%;
 	margin-left: -21px;
 	margin-top: -21px;
+	overflow: hidden;
 }
+.tout_footer .user{
+	float: left;
+	display: block;
+	margin-bottom: 10px;
+}
+.tout_footer .share{
+	float: right;
+	display: block;
+		margin-bottom: 10px;
+}
+hr{
+	clear: both;
+	border: none;
+	height: 1px;
+	background: gray;
+	display: block;
+	margin: 10px 0;
+}
+/*-------TOUT CONTENT-------*/
 .tout_wrap .social_re{
 	padding: 10px;
 }
@@ -210,7 +235,12 @@ li .tout_wrap{
 .tout_wrap .social_re .social{
 	float: right;
 }
-
+.tout_title{
+	font-size: 14px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255,255,255,.7);
+	color: #216fe0;
+}
 /*-------Video-------*/
 .tout_wrap .vid_wrap{
 	padding: 0 10px;
