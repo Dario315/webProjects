@@ -1,0 +1,184 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+:focus {
+	outline: 0;
+}
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article {
+	display: block;
+}
+html{
+	width: 100%;
+	min-height: 100%;
+	background: #fff;
+	background-image: -moz-linear-gradient(top, #FFFFFF, #b3b3b3);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #FFFFFF),color-stop(1, #b3b3b3));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#b3b3b3');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFFFF', EndColorStr='#b3b3b3')"; 
+}
+
+#wrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+#slideshow{
+	width: 900px;
+	margin: 5px auto 0 auto;
+	padding: 50px 0 0 0;
+	-webkit-perspective: 800;
+}
+figure{
+	display: inline;
+	-webkit-transform-style: preserve-3d;
+}
+/*----------------------------------
+	Box Styles
+-----------------------------------*/
+#box{
+	position: relative;
+	display: block;
+	width: 900px;
+	height: 400px;
+	-webkit-transform: translateZ(-200px); /* //pushes back into place */
+	-webkit-transition: -webkit-transform 1s ease-out;
+}
+#box span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-size: 80px;
+	font-family: Helvetica;
+	text-shadow: 0 1px 0 rgba(0,0,0,.8);
+	line-height: 400px;
+}
+#box span:nth-child(1){
+	width: 900px;
+	height: 400px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#9A0089), to(#5A005E));
+	background: -moz-linear-gradient(#9A0089, #5A005E);
+	-webkit-transform: rotateX(0deg) translateZ(200px);
+	/* display: none; */
+}
+#box span:nth-child(2){
+	width: 900px;
+	height: 400px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#9A7A00), to(#5E3A00));
+	background: -moz-linear-gradient(#9A7A00, #5E3A00);
+	-webkit-transform: rotateX(180deg) translateZ(200px);
+}
+
+#box span:nth-child(3){
+	width: 900px;
+	height: 400px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#009A7A), to(#005E4F));
+	background: -moz-linear-gradient(#009A7A, #005E4F);
+	-webkit-transform: rotateX(90deg) translateZ(200px);
+}
+#box span:nth-child(4){
+	width: 900px;
+	height: 400px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#9A0000), to(#5E0000));
+	background: -moz-linear-gradient(#9A0000, #5E0000);
+	-webkit-transform: rotateX(-90deg) translateZ(200px);
+}
+
+#box span:nth-child(5){
+	width: 400px;
+	height: 400px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00349A), to(#000A5F));
+	background: -moz-linear-gradient(#00349A, #000A5F);
+	-webkit-transform: rotateY(-90deg) translateZ(200px);
+}
+#box span:nth-child(6){
+	width: 400px;
+	height: 400px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#670099), to(#2C015D));
+	background: -moz-linear-gradient(#670099, #2C015D);
+	-webkit-transform: rotateY(90deg) translateZ(700px);
+}
+/*----------------------------------
+	Button Sryles
+-----------------------------------*/
+figcaption{
+	display: inline-block;
+	padding: 10px 10px 5px 10px;
+	height: 25px;
+	background: rgba(0,0,0,.6);
+	border:1px solid #eee;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 1px 1px #000;
+	font-family: Helvetica, arial, sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	position: relative;
+	top: -50px;
+	left:150px;
+	margin: 0 -40px 0 0;
+}
+figcaption:hover{
+	background: #ccc;
+}
+/*----------------------------------
+	Animations
+-----------------------------------*/
+#fig1:focus #box {
+ -webkit-transform: translateZ(-200px) rotateY(0deg);
+}
+
+#fig2:focus #box {
+ -webkit-transform: translateZ(-200px) rotateX(-180deg);
+}
+
+#fig3:focus #box {
+ -webkit-transform: translateZ(-200px) rotateX(-90deg);
+}
+
+#fig4:focus #box {
+ -webkit-transform: translateZ(-200px) rotateX(90deg);
+}
+
+#fig5:focus #box {
+ -webkit-transform: translateZ(-450px) rotateY(90deg);
+}
+
+#fig6:focus #box {
+ -webkit-transform: translateZ(-450px) rotateY(-90deg);
+}
